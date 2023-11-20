@@ -1,0 +1,42 @@
+# process parameters
+#
+nclasses        = 400          # []           total number of classes ( => grid size)
+sizeexp         = 1.015        # []           mult factor for initial CSD
+name            = lysozyme     # string       name of the solute
+t_end           = 10800        # [sec]        total simulation time
+SizeNucl        = 1.00e-06     # [cm]         this is also taken to be the size of the smallest class
+Temp            = 22.0         # [degC]       temperature
+pH              = 4.5          # []           pH
+dt_0            = 0.1          # [sec]        initial time step of adaptive RK integrator
+dt_write        = 10.0         # [sec]        time interval for calling the observer
+fr_AS           = 0.3333       # [cm3/sec]    flowrate of AS solution
+printlevel      = 1            #              boolean: 2=print CSD of t
+const_supsat    = 0            # []
+
+# masses, volumes, concentrations, and densities
+#
+ml_AS_max       = 130          # [g]          maximum mass of AS to add, zero if no AS is added
+ml_protein_0    = 25.00        # [g]          mass of solvated protein in solution at t=0
+ml_water_0      = 482.7        # [g]          mass of water at t=0
+dl_water_res    = 0.944        # [g/cm3]      density of water in AS solution
+dl_AS_res       = 0.26         # [g/cm3]      density of AS in AS solution
+ds_protein      = 1.45         # [g/cm3]      density of protein in crystal
+ds_water        = 0.73         # [g/cm3]      density of water in crystal
+shapefac        = 0.5          # []           shape factor crystal volume/cube
+
+# seed
+#
+ms_protein_0    = 0            # [g]          initial protein mass (in seed)
+typecsd0        = 0            # []           seed CSD 0: no seed, 1: square, 2: norm dist
+mcsd0           = 5.0e-03      # [cm]         mean of initial CSD [cm] 1mum = 1.0e-04cm
+scsd0           = 2.0e-03      # [cm]         sigma of initial CSD [cm]
+
+# kinetic parameters
+#
+ga              = 2.58e-09     # [cm/sec]     growth rate parameter a 0.1 mum/h = 1.0e-05 cm/h
+gb              = 2.0          # []           growth rate parameter b
+na              = 1.24e-05     # [#/cm3/sec]  nucleation parameter a
+nb              = 4.17         # []           nucleation parameter b
+ak              = 1.0e-12      # const aggr kernel
+at              = 0            # aggregation type, - 
+                               # 0: none, 1: const, 2: sum, 3: product, 4: (Li+Lj)^3, 5: G * (Li+Lj)^3
